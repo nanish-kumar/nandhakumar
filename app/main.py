@@ -12,6 +12,10 @@ models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 
+@app.get("/")
+def health():
+    return {"status":"ok"}
+
 @app.post("/addresses/", response_model=schemas.Address)
 def create_address(address: schemas.AddressCreate, db: Session = Depends(database.get_db)):
     return crud.create_address(db=db, address=address)
