@@ -23,7 +23,7 @@ This is an address book API built with FastAPI and SQLite.
 
 4. Run the application:
    ```sh
-   uvicorn main:app --reload
+   uvicorn app.main:app --reload
    ```
 
 ## API Endpoints
